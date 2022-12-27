@@ -1,0 +1,53 @@
+数字类型：
+char 字符数据类型
+short 短整形
+int 整形
+long 长整形
+long long 更长整形
+float 单精度浮点型
+double 双精度浮点型
+
+%d 打印整形
+%c 打印字符
+%f 打印浮点型（单精度）
+%lf 打印浮点型 （双精度）
+
+举例：
+一、
+#include <stdio.h>
+
+int main()
+{
+  char a = 'A';字符需要使用 ‘’ 来包括
+  printf("%c\n",a);
+  return 0;
+}
+
+二、
+#include <stdio.h>
+
+int main()
+{
+  float win = 95.6f;系统有时候会判95.6为双精度，所以需要在数字后面加 f
+  printf("win = %d\n",win);
+  return 0;
+}
+
+打印输出每个数字类型申请的空间大小（字节）：
+#include <stdio.h>
+
+int main()
+{
+  printf("%d\n",sizeof(char));      1 = 8bit
+  printf("%d\n",sizeof(short));     2 = 16bit
+  printf("%d\n",sizeof(int));       4 = 32bit
+  printf("%d\n",sizeof(long));      4或8 = 32或64 bit
+  printf("%d\n",sizeof(long long)); 8 = 64bit
+  printf("%d\n",sizeof(float));     4 = 32bit
+  printf("%d\n",sizeof(double));    8 = 64bit
+  return 0;
+}
+
+举例：2字节可以表示的数字种类 = 2^16
+范围是：最小为0
+       最大为 2^16 - 1
