@@ -1,0 +1,58 @@
+变量：生活中可以改变的量为变量
+常量：生活不可改变的量为常量
+
+变量又分为 全局变量、局部变量
+
+#include <stdio.h>
+
+int age = 16;全局变量：定义与代码块（{}）外的量
+
+int main()
+{
+  int age = 16;局部变量：定义于代码块（{}）内的量
+  建议全局变量名称与局部变量名称不要相同，不然会误会，产生bug
+  当全局变量名称和局部变量名称同时时，局部变量优先
+  printf("%d\n",age);
+  return 0;
+}
+
+变量的使用：数字相加
+#include <stdio.h>
+
+int main()
+{
+  int a = 0;
+  int b = 0;
+  scanf_s("%d%d",&a,&b);
+  int sum = a + b; 此行不可放到26行上面，否则运行程序，相加的结果都为0
+  printf("sum = %d\n",sum);
+  return 0;
+}
+
+#include <stdio.h>
+
+int main()
+{
+  int a = 0;
+  int b = 0;
+  scanf_s("%d%d",&a,&b);
+  int sum = 0; 即使变成这样也不可
+  sum = a + b;
+  printf("sum = %d\n",sum);
+  return 0;
+}
+
+变量的作用域与生命周期
+变量的作用域分为：局部变量、全局变量
+
+局部变量的作用域是变量所在局部范围
+全局变量的作用域为整个工程，即使在另一个文件中写入 int age = 16；，我们则需要在原本的文件中声明一下即可运行
+
+#include <stdio.h>
+
+int main()
+{
+  extern int age; extern用来声明外部符号
+  printf("%d\n",age);
+  return 0;
+}
