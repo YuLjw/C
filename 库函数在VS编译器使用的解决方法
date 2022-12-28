@@ -1,0 +1,24 @@
+数字的相加：
+
+#include <stdio.h>
+
+int main()
+{
+  int a = 0;
+  int b = 0;
+  scanf("%d%d",&a,&b);
+  int sum = a + b;
+  printf("%d\n",sum);
+  return 0;
+}
+
+C语言大多数库函数在 VS编译器 内是辨别为不安全，所以不可用，会报错
+scanf是C语言提供的库函数，所以在 VS编译器 内不可用
+
+方法一：
+VS提供的代码是 scanf_s
+但是此代码只能在 VS编译器 内使用，所以 scanf_s 不具有跨平台性，可移植性
+
+方法二：
+在第一行写入：#define _CRT_SECURE_NO_WARNINGS 1
+此代码是将报错（警告）失效
